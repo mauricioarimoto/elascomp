@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#6f2b8f">
 <title>*elas — Estações Interativas</title>
-<link rel="stylesheet" href="css/style.css">
+<style>
+:root{--bg:#f8f3fb;--paper:#fff;--ink:#31133f;--muted:#765f80;--purple:#6f2b8f;--pink:#d63b91;--gold:#f1b544;--line:#eadcf0;--shadow:0 18px 55px rgba(69,24,90,.12)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial;background:radial-gradient(circle at 0 0,#f2ddea 0,transparent 28%),radial-gradient(circle at 100% 100%,#e7daf4 0,transparent 28%),var(--bg);color:var(--ink);min-height:100vh}button{font:inherit}.hide{display:none!important}.shell{width:min(1100px,92vw);margin:auto;padding:42px 0 60px}.brand{display:flex;gap:18px;align-items:center}.mark{font-size:58px;font-weight:1000;color:var(--pink);letter-spacing:-5px}.eyebrow{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--pink)}h1{font-size:clamp(30px,5vw,50px);line-height:1;margin:4px 0}h2{font-size:clamp(28px,4vw,42px);margin:6px 0 20px}h3{font-size:24px}.lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:850px}.stations{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}.station{border:1px solid var(--line);background:#fff;border-radius:24px;padding:24px;text-align:left;box-shadow:var(--shadow);cursor:pointer;color:var(--ink);transition:.2s}.station:hover{transform:translateY(-4px)}.station span{font-size:38px;display:block}.station b{display:block;font-size:23px;margin:8px 0}.station small{display:block;color:var(--muted);line-height:1.5;font-size:15px}.station em{display:block;margin-top:18px;color:var(--pink);font-size:13px;font-style:normal;font-weight:900;letter-spacing:.08em}footer{text-align:center;color:var(--muted);margin-top:30px;font-size:13px}.back{position:fixed;top:18px;left:18px;z-index:10;border:0;background:#fff;padding:11px 15px;border-radius:999px;box-shadow:0 8px 25px #0001;font-weight:800;color:var(--purple);cursor:pointer}.panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow)}.center{text-align:center}.split{display:flex;justify-content:space-between;gap:20px;align-items:center}.pill{display:inline-block;padding:8px 13px;border-radius:999px;background:#f1e5f5;color:var(--purple);font-weight:900}.primary,.ghost,.option,.mf,.check{border:0;border-radius:14px;padding:13px 16px;font-weight:900;cursor:pointer}.primary{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff}.ghost{background:#f2eaf6;color:var(--purple)}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}.twocol{display:grid;grid-template-columns:minmax(340px,520px) 1fr;gap:26px;align-items:center}.pointer{font-size:38px;margin-bottom:-8px}.wheel{width:min(76vw,470px);aspect-ratio:1;border-radius:50%;margin:auto;border:10px solid #fff;box-shadow:var(--shadow);position:relative;transition:transform 3.5s cubic-bezier(.15,.75,.1,1);background:conic-gradient(#f0b442 0 60deg,#d63b91 60deg 120deg,#7b3ca1 120deg 180deg,#f08b54 180deg 240deg,#5aa7a7 240deg 300deg,#7963bd 300deg)}.wheel:after{content:"*elas";position:absolute;inset:38%;display:grid;place-items:center;background:#fff;border-radius:50%;font-size:26px;font-weight:1000;color:var(--pink)}.wheel span{position:absolute;left:50%;top:50%;transform:rotate(var(--a)) translateY(-180px) rotate(calc(-1 * var(--a)));font-size:25px}.wheel span b{display:block;color:white;font-size:10px;max-width:80px;text-align:center}.twocol .primary{margin-top:18px}.options{display:grid;gap:10px;margin-top:16px}.option{background:#f5eff8;border:2px solid transparent;text-align:left;color:var(--ink)}.option.ok{background:#edf8f1;border-color:#5aaa79}.option.bad{background:#fff0f3;border-color:#d96a7b}.feedback{margin-top:16px;padding:15px;border-radius:16px;background:#f5eff8;line-height:1.55}.feedback.ok{background:#edf8f1}.scorebar{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.scorebar div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;text-align:center}.scorebar b{display:block;font-size:30px;color:var(--purple)}.scorebar small{font-weight:900;color:var(--muted)}.timer{height:9px;background:#e5d8eb;border-radius:99px;overflow:hidden;margin:12px 0 18px}.timer i{height:100%;display:block;background:linear-gradient(90deg,var(--pink),var(--gold));width:100%}.bigq{font-size:clamp(22px,3vw,34px);font-weight:900;line-height:1.35;margin:18px auto}.mfrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mf.fact{background:#eaf7ef;color:#257447}.mf.myth{background:#fff0f3;color:#b73f57}.imggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.imggrid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;background:#eee}.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}.check{background:#f5eff8;color:var(--ink)}.check.on{outline:2px solid var(--pink);background:#fff1f8}.dots{display:flex;gap:7px;justify-content:center;margin-bottom:12px}.dot{width:10px;height:10px;border-radius:50%;background:#d9c6e3}.dot.on{background:var(--pink)}.clue{background:#f6f0f8;border:2px solid var(--line);border-radius:18px;padding:18px;text-align:left;margin:18px 0}.clue small{font-weight:900;color:var(--pink)}.clue div{font-size:19px;font-weight:850;line-height:1.45;margin-top:6px}.finalscore{font-size:64px;font-weight:1000;color:var(--purple)}
+@media(max-width:820px){.stations,.twocol{grid-template-columns:1fr}.imggrid{grid-template-columns:repeat(2,1fr)}.wheel span{transform:rotate(var(--a)) translateY(-34vw) rotate(calc(-1 * var(--a)))}}@media(max-width:600px){.shell{padding-top:70px}.stations,.checks,.mfrow{grid-template-columns:1fr}.split{align-items:flex-start;flex-direction:column}.panel{padding:20px}}
+</style>
 </head>
 <body>
 <button id="backBtn" class="back hide">← Voltar</button>
@@ -49,5 +54,154 @@
 <div id="dots" class="dots"></div><div id="discoverPanel" class="panel center"></div>
 </section>
 </main>
-<script src="js/app.js"></script>
-</body></html>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const screens=$$('.screen'), back=$('#backBtn');
+let blitzTimer=null;
+
+function stopBlitz(){if(blitzTimer){clearInterval(blitzTimer);blitzTimer=null}}
+function show(id){
+  screens.forEach(x=>x.classList.add('hide'));
+  const target=$('#'+id); if(!target)return;
+  target.classList.remove('hide');
+  back.classList.toggle('hide',id==='home');
+  if(id==='blitz')blitzStart();
+  if(id==='bias')biasStart();
+  if(id==='discover')discoverStart();
+}
+$$('[data-open]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.open)));
+back.addEventListener('click',()=>{stopBlitz();show('home')});
+
+const wheelData=[
+['🧠 PROGRAME',[['Algoritmo relâmpago','Um robô precisa avançar, avançar, virar à direita e avançar. Qual sequência representa isso?',['↑ ↑ ↱ ↑','↑ ↱ ↑ ↑','↱ ↑ ↑ ↑'],0,'Um algoritmo é uma sequência ordenada de instruções.']]],
+['🤖 IA',[['IA também erra','Uma IA apresenta uma informação com muita confiança. O que é mais adequado?',['Verificar em fontes confiáveis','Aceitar sem conferir','Compartilhar imediatamente'],0,'IAs podem produzir informações incorretas; avaliação crítica é essencial.']]],
+['💜 HISTÓRIA',[['Pioneira da programação','Quem é reconhecida como pioneira da programação por seu trabalho na Máquina Analítica?',['Ada Lovelace','Grace Hopper','Margaret Hamilton'],0,'Ada Lovelace descreveu um algoritmo para a Máquina Analítica.']]],
+['⚡ MITO OU FATO',[['Só programação?','Computação se resume a escrever código.',['MITO','FATO'],0,'Mito. A área inclui IA, dados, redes, IHC, robótica e segurança.']]],
+['🚀 COMPUTAÇÃO',[['Além do código','Qual opção representa uma área real da Computação?',['Interação Humano-Computador','Digitação rápida','Manutenção de qualquer aparelho elétrico'],0,'Interação Humano-Computador estuda a relação entre pessoas e sistemas.']]],
+['⭐ SURPRESA',[['Quebre o estereótipo','Complete: “Uma pessoa que trabalha com Computação pode ser...”',null,null,'Não existe um perfil único — pessoas diversas constroem trajetórias na área.']]]
+];
+let rot=0,last=-1;
+$('#spinBtn').addEventListener('click',function(){
+  let i; do{i=Math.floor(Math.random()*wheelData.length)}while(i===last); last=i;
+  rot+=1440+(360-(i*60+30)-rot%360+360)%360;
+  $('#wheelDisc').style.transform='rotate('+rot+'deg)';
+  this.disabled=true;
+  setTimeout(()=>{renderWheel(i);this.disabled=false},3550);
+});
+function renderWheel(i){
+  const c=wheelData[i], q=c[1][Math.floor(Math.random()*c[1].length)];
+  let h='<span class="pill">'+c[0]+'</span><h3>'+q[0]+'</h3><p>'+q[1]+'</p>';
+  if(q[2])h+='<div class="options">'+q[2].map((x,j)=>'<button class="option" data-j="'+j+'">'+x+'</button>').join('')+'</div><div id="wfb"></div>';
+  else h+='<div class="actions"><button class="ghost" id="reveal">VER RESPOSTA</button></div><div id="wfb"></div>';
+  $('#wheelPanel').innerHTML=h;
+  if(q[2]){
+    $$('#wheelPanel .option').forEach(b=>b.addEventListener('click',()=>{
+      const j=Number(b.dataset.j), opts=$$('#wheelPanel .option');
+      opts.forEach(x=>x.disabled=true);
+      b.classList.add(j===q[3]?'ok':'bad');
+      if(j!==q[3])opts[q[3]].classList.add('ok');
+      $('#wfb').innerHTML='<div class="feedback '+(j===q[3]?'ok':'')+'">'+q[4]+'</div>';
+    }));
+  } else {
+    $('#reveal').addEventListener('click',()=>$('#wfb').innerHTML='<div class="feedback ok">'+q[4]+'</div>');
+  }
+}
+
+const facts=[
+['É preciso saber programar antes de entrar na faculdade de Computação.',false,'Os fundamentos são ensinados desde o início.'],
+['Ada Lovelace é considerada uma das pioneiras da programação.',true,'Ela descreveu um algoritmo para a Máquina Analítica.'],
+['Toda imagem gerada por IA é neutra e livre de preconceitos.',false,'Modelos podem reproduzir padrões e vieses.'],
+['Computação é só sobre escrever código.',false,'A área inclui IA, dados, jogos, redes, segurança, IHC e mais.'],
+['Margaret Hamilton liderou a equipe de software de voo do programa Apollo.',true,'Ela liderou a equipe no MIT Instrumentation Laboratory.'],
+['Grace Hopper teve papel fundamental no desenvolvimento de compiladores.',true,'Ela é uma referência na história das linguagens de programação.']
+];
+let bs=0,bt=60,br=0,bo=[],bi=0;
+function blitzStart(){
+  stopBlitz(); bs=0; bt=60;
+  $('#bScore').textContent='0'; $('#bTime').textContent='60'; $('#bRecord').textContent=String(br); $('#timerBar').style.width='100%';
+  $('#blitzPanel').innerHTML='<div style="font-size:48px">⚡</div><h3>Blitz: Verdade ou Mito</h3><p>Você terá <b>60 segundos</b>.</p><button class="primary" id="goB">COMEÇAR</button>';
+  $('#goB').addEventListener('click',()=>{
+    bo=[...facts].sort(()=>Math.random()-.5); bi=0; nextFact();
+    const t=Date.now();
+    blitzTimer=setInterval(()=>{
+      const e=Date.now()-t; bt=Math.max(0,60-Math.floor(e/1000));
+      $('#bTime').textContent=String(bt); $('#timerBar').style.width=Math.max(0,100-e/600)+'%';
+      if(e>=60000)endBlitz();
+    },100);
+  });
+}
+function nextFact(){
+  if(bi>=bo.length){bo=[...facts].sort(()=>Math.random()-.5);bi=0}
+  const q=bo[bi++];
+  $('#blitzPanel').innerHTML='<div class="bigq">'+q[0]+'</div><div class="mfrow"><button class="mf fact">✅ FATO</button><button class="mf myth">❌ MITO</button></div>';
+  $('.fact').addEventListener('click',()=>answerFact(true,q)); $('.myth').addEventListener('click',()=>answerFact(false,q));
+}
+function answerFact(v,q){
+  if(v===q[1])bs+=10; $('#bScore').textContent=String(bs);
+  $('#blitzPanel').innerHTML='<div class="feedback '+(v===q[1]?'ok':'')+'">'+(v===q[1]?'✅ Correto! ':'❌ Não desta vez. ')+q[2]+'</div>';
+  setTimeout(()=>{if(bt>0)nextFact()},500);
+}
+function endBlitz(){
+  stopBlitz(); br=Math.max(br,bs); $('#bRecord').textContent=String(br);
+  $('#blitzPanel').innerHTML='<h3>Tempo esgotado!</h3><p>Você fez <b>'+bs+'</b> pontos.</p><div class="actions"><button class="primary" id="againB">JOGAR NOVAMENTE</button><button class="ghost" id="homeB">MENU</button></div>';
+  $('#againB').addEventListener('click',blitzStart); $('#homeB').addEventListener('click',()=>show('home'));
+}
+
+const imgBase='https://raw.githubusercontent.com/mahhhvs/projeto_elas/main/';
+const bias=[
+{t:'Experimento 1 — Especialista em IA',p:'“Gere uma imagem de uma pessoa especialista em Inteligência Artificial.”',i:['homens IA.png','homem ia.png','homem e mulher.png','homem certinho.png']},
+{t:'Experimento 2 — Desenvolvimento de software',p:'“Gere uma imagem de uma pessoa que trabalha com desenvolvimento de software.”',i:['homem dev.png','homem prog.png','mulher dev.png','ensinando homem.png']}
+];
+let bx=0;
+function biasStart(){bx=0;renderBias()}
+function renderBias(){
+  if(bx<2){
+    const r=bias[bx];
+    $('#biasPanel').innerHTML='<span class="pill">'+r.t+'</span><h3>Observe as imagens</h3><p>Prompt: <b>'+r.p+'</b></p><div class="imggrid">'+r.i.map(x=>'<img src="'+imgBase+encodeURIComponent(x)+'" alt="">').join('')+'</div><h3>Que padrões você percebe?</h3><div class="checks">'+['Predominam homens','Predominam mulheres','Pouca diversidade de idade','Pouca diversidade étnico-racial','Ambientes/roupas parecidos','Percebi diversidade real'].map(x=>'<button class="check">'+x+'</button>').join('')+'</div><div class="actions"><button class="primary" id="nextBias">CONTINUAR</button></div>';
+    $$('.check').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('on')));
+    $('#nextBias').addEventListener('click',()=>{bx++;renderBias()});
+  } else {
+    $('#biasPanel').innerHTML='<span class="pill">REFLEXÃO</span><h3>O que podemos concluir?</h3><p>Um pequeno conjunto de imagens não prova, sozinho, que um modelo é enviesado. Mas padrões recorrentes podem indicar representações estereotipadas e motivar uma investigação mais ampla.</p><div class="feedback"><b>Pergunta final:</b> quem aparece — e quem deixa de aparecer — quando pedimos à IA que represente profissões tecnológicas?</div><div class="actions"><button class="primary" id="againBias">REPETIR</button><button class="ghost" id="homeBias">MENU</button></div>';
+    $('#againBias').addEventListener('click',biasStart); $('#homeBias').addEventListener('click',()=>show('home'));
+  }
+}
+
+const women=[
+{name:'Ada Lovelace',c:['Viveu no século XIX, antes dos computadores eletrônicos.','Estudou a Máquina Analítica de Charles Babbage.','Escreveu uma sequência de operações reconhecida como um dos primeiros algoritmos destinados a uma máquina.'],o:['Ada Lovelace','Grace Hopper','Margaret Hamilton','Katherine Johnson'],e:'Ada Lovelace tornou-se uma referência histórica da programação.'},
+{name:'Grace Hopper',c:['Foi cientista da computação e oficial da Marinha dos Estados Unidos.','Defendeu linguagens mais próximas da linguagem humana.','Foi pioneira no desenvolvimento de compiladores e influenciou o COBOL.'],o:['Frances Allen','Grace Hopper','Radia Perlman','Carol Shaw'],e:'Grace Hopper foi uma das pioneiras dos compiladores.'},
+{name:'Margaret Hamilton',c:['Seu trabalho ganhou importância durante a corrida espacial.','Liderou uma equipe de software no MIT Instrumentation Laboratory.','Sua equipe desenvolveu software de voo usado nas missões Apollo.'],o:['Katherine Johnson','Margaret Hamilton','Ada Lovelace','Annie Easley'],e:'Margaret Hamilton liderou a equipe de software de voo das missões Apollo.'},
+{name:'Katherine Johnson',c:['Foi matemática e trabalhou em uma agência espacial dos Estados Unidos.','Realizou cálculos de trajetórias e janelas de lançamento.','Seus cálculos contribuíram para missões da NASA, incluindo o voo orbital de John Glenn.'],o:['Katherine Johnson','Frances Allen','Carol Shaw','Radia Perlman'],e:'Katherine Johnson realizou cálculos fundamentais para missões da NASA.'},
+{name:'Carol Shaw',c:['Construiu carreira em uma indústria com pouquíssimas mulheres.','Trabalhou com jogos para consoles domésticos.','É reconhecida como pioneira dos videogames e ficou conhecida por River Raid.'],o:['Carol Shaw','Grace Hopper','Margaret Hamilton','Frances Allen'],e:'Carol Shaw é uma pioneira da indústria de jogos eletrônicos.'},
+{name:'Frances Allen',c:['Sua carreira esteve ligada à pesquisa em compiladores.','Contribuiu para técnicas de otimização de programas.','Em 2006 tornou-se a primeira mulher a receber o ACM A.M. Turing Award.'],o:['Frances Allen','Ada Lovelace','Katherine Johnson','Annie Easley'],e:'Frances Allen foi pioneira em otimização de compiladores e a primeira mulher a receber o Prêmio Turing.'},
+{name:'Radia Perlman',c:['Seu trabalho foi decisivo para redes de computadores.','É engenheira de redes e autora de contribuições em protocolos.','É especialmente conhecida pela criação do Spanning Tree Protocol.'],o:['Radia Perlman','Grace Hopper','Carol Shaw','Margaret Hamilton'],e:'Radia Perlman criou o Spanning Tree Protocol, fundamental para redes Ethernet.'},
+{name:'Annie Easley',c:['Trabalhou como matemática, programadora e cientista.','Desenvolveu software e analisou tecnologias ligadas à energia.','Atuou na NACA/NASA em projetos de energia e propulsão.'],o:['Annie Easley','Katherine Johnson','Frances Allen','Ada Lovelace'],e:'Annie Easley contribuiu para software e pesquisas em energia e propulsão na NACA/NASA.'}
+];
+let dr=[],di=0,ds=0,dc=0,done=false;
+function sh(a){const c=[...a];for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]]}return c}
+function discoverStart(){dr=sh(women).slice(0,5);di=0;ds=0;$('#dScore').textContent='0';renderDiscover()}
+function renderDiscover(){
+  const q=dr[di]; dc=0; done=false;
+  $('#dots').innerHTML=dr.map((_,i)=>'<i class="dot '+(i===di?'on':'')+'"></i>').join('');
+  $('#discoverPanel').innerHTML='<span class="pill">DESAFIO '+(di+1)+' DE 5</span><h3>Quem é ela?</h3><p>Quanto menos pistas você usar, mais pontos ganha.</p><div class="clue"><small id="cl">PISTA 1 DE 3 · VALE 30 PONTOS</small><div id="ct">'+q.c[0]+'</div></div><div class="options" id="do">'+sh(q.o).map(x=>'<button class="option" data-n="'+x+'">'+x+'</button>').join('')+'</div><div class="actions"><button class="ghost" id="more">MOSTRAR OUTRA PISTA</button></div><div id="df"></div>';
+  $('#more').addEventListener('click',()=>{if(dc<2&&!done){dc++;$('#ct').textContent=q.c[dc];$('#cl').textContent='PISTA '+(dc+1)+' DE 3 · VALE '+[30,20,10][dc]+' PONTOS';if(dc===2)$('#more').disabled=true}});
+  $$('#do .option').forEach(b=>b.addEventListener('click',()=>answerD(b,q)));
+}
+function answerD(b,q){
+  if(done)return; done=true;
+  const ok=b.dataset.n===q.name, pts=ok?[30,20,10][dc]:0; ds+=pts; $('#dScore').textContent=String(ds);
+  const opts=$$('#do .option'); opts.forEach(x=>{x.disabled=true;if(x.dataset.n===q.name)x.classList.add('ok')}); if(!ok)b.classList.add('bad'); $('#more').disabled=true;
+  $('#df').innerHTML='<div class="feedback '+(ok?'ok':'')+'">'+(ok?'✅ <b>Acertou! +'+pts+' pontos.</b>':'↗ <b>A resposta é '+q.name+'.</b>')+'<br>'+q.e+'</div><div class="actions"><button class="primary" id="dn">'+(di===4?'VER RESULTADO':'PRÓXIMA MULHER')+'</button></div>';
+  $('#dn').addEventListener('click',()=>{di++;if(di>=5)finishD();else renderDiscover()});
+}
+function finishD(){
+  $('#dots').innerHTML='';
+  $('#discoverPanel').innerHTML='<div style="font-size:48px">💜</div><h3>Você desvendou *elas!</h3><div class="finalscore">'+ds+'</div><p>de 150 pontos possíveis</p><p>Cada história descoberta amplia nossa visão sobre quem construiu e continua construindo a Computação.</p><div class="actions"><button class="primary" id="da">JOGAR NOVAMENTE</button><button class="ghost" id="dh">MENU</button></div>';
+  $('#da').addEventListener('click',discoverStart); $('#dh').addEventListener('click',()=>show('home'));
+}
+show('home');
+});
+</script>
+</body>
+</html>
