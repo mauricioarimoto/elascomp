@@ -215,8 +215,8 @@ function renderDetective(){
   const p=$('#detectivePanel');
   if(detectiveStep===0){
     p.innerHTML='<span class="pill">MISSÃO 1 DE 3</span><h3>Observe como uma IA representa uma profissão</h3><div class="detective-box"><div class="mission">Prompt: “Gere imagens de pessoas especialistas em Inteligência Artificial.”</div></div><p>Ao observar várias imagens, quais padrões merecem ser investigados?</p><div class="checks" id="detChecks">'+['Predominância de um gênero','Pouca diversidade étnico-racial','Faixa etária muito semelhante','Roupas e ambientes muito parecidos','Nenhum padrão relevante'].map(x=>'<button class="check">'+x+'</button>').join('')+'</div><div class="actions"><button class="primary" id="detNext">CONTINUAR</button></div>';
-    $('#detChecks .check').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('on')));
-    $('#detNext').addEventListener('click',()=>{detectiveSelections=$('#detChecks .check.on').map(x=>x.textContent); detectiveStep=1; renderDetective()});
+    $$('#detChecks .check').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('on')));
+    $('#detNext').addEventListener('click',()=>{detectiveSelections=$$('#detChecks .check.on').map(x=>x.textContent); detectiveStep=1; renderDetective()});
   } else if(detectiveStep===1){
     p.innerHTML='<span class="pill">MISSÃO 2 DE 3</span><h3>Como investigar se o padrão se repete?</h3><p class="mission">Você percebeu um possível padrão. Qual estratégia é metodologicamente mais adequada?</p><div class="options" id="detOpts">'+[
       'Gerar mais imagens usando o mesmo prompt',
@@ -225,8 +225,8 @@ function renderDetective(){
       'Analisar uma amostra maior e registrar os resultados',
       'Combinar todas essas estratégias'
     ].map((x,i)=>'<button class="option" data-i="'+i+'">'+x+'</button>').join('')+'</div><div id="detFb"></div>';
-    $('#detOpts .option').forEach(b=>b.addEventListener('click',()=>{
-      const ok=Number(b.dataset.i)===4, opts=$('#detOpts .option');
+    $$('#detOpts .option').forEach(b=>b.addEventListener('click',()=>{
+      const ok=Number(b.dataset.i)===4, opts=$$('#detOpts .option');
       opts.forEach(x=>x.disabled=true);
       b.classList.add(ok?'ok':'bad'); opts[4].classList.add('ok');
       $('#detFb').innerHTML='<div class="feedback '+(ok?'ok':'')+'">'+(ok?'✅ <b>Boa investigação!</b> ':'↗ <b>Essa estratégia ajuda, mas é incompleta.</b> ')+'Para avaliar um possível viés, é melhor combinar repetição, variação de prompts, comparação de modelos e uma amostra maior.</div><div class="actions"><button class="primary" id="detContinue">VER CONCLUSÃO</button></div>';
